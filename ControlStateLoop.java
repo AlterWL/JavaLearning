@@ -58,9 +58,9 @@ public class ControlStateLoop
             // i++;  // 输出0~9
         }
         System.out.println("\ni -> "+i);  // 退出循环后i=10 
-        System.out.println("---------------");
-
+        
         // 输出1~100内的所有奇数，并计算它们的和
+        System.out.println("--------------1~100内的奇数-------------");
         int sumOfOdds = 0;
         /* // 方法一；
         for(int n=1;n<=100;n++)
@@ -78,9 +78,19 @@ public class ControlStateLoop
         }
         System.out.println("\n奇数和为："+sumOfOdds);  // 2500
 
+        // 九九乘法表
+        System.out.println("---------------九九乘法表---------------");
+        for(int row=1;row<=9;row++)  // 一共九行
+        {
+            for(int column=1;column<=row;column++)  //每行列数和行号数相同
+                System.out.print(row+"*"+column+"="+row*column+" ");  // 拼出乘法表达式
+            System.out.println();  // 换行
+        }
+        
         // 输出一个n行高的等腰三角形
+        System.out.println("---------------等腰三角形---------------");
         java.util.Scanner s = new java.util.Scanner(System.in);
-        System.out.print("想要输出三角形的高度（数字）？");
+        System.out.print("想要输出三角形的高度(数字)：");
         int lines = s.nextInt();
         // 循环嵌套
         for(int k=0;k<lines;k++)
@@ -91,6 +101,5 @@ public class ControlStateLoop
                 System.out.print('*');
             System.out.println();  // 每行结尾换行
         }
-        
     }
 }
