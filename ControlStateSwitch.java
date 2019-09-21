@@ -37,7 +37,7 @@
             int i = 2;
             switch(i){
                 case 1: case 2: case 3: case 10:
-                    dayOfWeek = "Mergd cases.")  // i=1,2,3,10都会执行该分支中的语句
+                    System.out.println("Merged cases.")  // i=1,2,3,10都会执行该分支中的语句
             }
  */
 
