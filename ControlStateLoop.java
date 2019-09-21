@@ -10,13 +10,11 @@
             - do...while循环
         
     for循环：
-
         1、语法结构：
             for(初始化表达式;布尔表达式;更新表达式)
             {
                 需要重复执行的代码片段【由java语句】
             }
-        
         2、执行过程/执行原理：
             - 初始化表达式、布尔表达式和更新表达式都不是必须写的，但是分号必须写；
             - 初始表达式最先执行，并且只执行一次；
@@ -30,24 +28,36 @@
                         - 到第②步
                     * 布尔表达式结果为false:
                         - 循环结束
+        
+    while结构：
+        1、语法结构：
+            while(布尔表达式)
+            {
+                循环体;
+            }
+        2、执行原理：
+            ① 判断布尔表达式的结果；
+            - 结果为true：执行循环体，然后回到第①步
+            - 结果为false：结束循环
+        3、循环次数：
+            0~N次
+            注意：while循环的循环体可能执行0次。
 */
 
 public class ControlStateLoop
 {
     public static void main(String[] args)
     {
+        /*************************** for结构 *****************************/
+        System.out.println("******************* for结构 *******************");
         // 输出数字0~9
         /* for(int i=0;i<10;i++)  // 这个i的作用域只在当前for循环内，出了循环就无法访问了
-        {
             System.out.println(i);
-        }
         System.out.println(i);  // 编译错误: 找不到符号 */
 
         //死循环
         /* for(;;)
-        {
-            System.out.println("死循环");
-        } */
+            System.out.println("死循环"); */
         
         int i=0;
         for(;i<10;)  // 可以在声名时赋值，也可以在初始表达式中赋值
@@ -101,5 +111,26 @@ public class ControlStateLoop
                 System.out.print('*');
             System.out.println();  // 每行结尾换行
         }
+        
+        /*************************** while结构 *****************************/
+        System.out.println("****************** while结构 ******************");
+        /* while(true){
+            System.out.println("死循环");
+        }
+        // System.out.println("Hello!");  // 编译报错：无法访问的语句 */
+        
+        /* int m = 10;
+        int n = 3;
+        while(m > n)  // 编译过程只检查语法，还未给变量分配空间，不知道布尔表达式结果
+            System.out.println("死循环");
+        System.out.println("Hello!");  // 编译通过。理由如上 */
+    }
+}
+
+class WhileStructure
+{
+    public static void main(String[] args)
+    {
+        
     }
 }
