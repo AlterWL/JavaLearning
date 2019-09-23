@@ -42,14 +42,30 @@
         3、循环次数：
             0~N次
             注意：while循环的循环体可能执行0次。
+
+    do...while循环：
+        1、语法结构：
+            do
+            {
+                循环体；
+            }while(布尔表达式);
+        2、执行原理；
+            ① 执行循环体；
+            ② 判断布尔表达式结果：
+                - 结果为true：回到第①步；
+                - 结果为false，循环结束。
+        3、循环次数：
+            1~N次【循环体执行至少一次】
+        4、注意事项：
+            do...while循环语句最后有一个“分号”别丢了。
 */
 
-public class ControlStateLoop
+public class StatementLoop
 {
     public static void main(String[] args)
     {
         /*************************** for结构 *****************************/
-        System.out.println("******************* for结构 *******************");
+        System.out.println("=================== for结构 ===================");
         // 输出数字0~9
         /* for(int i=0;i<10;i++)  // 这个i的作用域只在当前for循环内，出了循环就无法访问了
             System.out.println(i);
@@ -85,6 +101,8 @@ public class ControlStateLoop
         {
             sumOfOdds += n;
             System.out.print(n+" ");
+            if(n%10 == 9)  // 每5个数换行
+                System.out.println();
         }
         System.out.println("\n奇数和为："+sumOfOdds);  // 2500
 
@@ -113,24 +131,45 @@ public class ControlStateLoop
         }
         
         /*************************** while结构 *****************************/
-        System.out.println("****************** while结构 ******************");
+        System.out.println("=================== while结构 ===================");
         /* while(true){
             System.out.println("死循环");
         }
         // System.out.println("Hello!");  // 编译报错：无法访问的语句 */
+        
+        /* while(5 > 3)  // 和true效果一样
+        {
+            System.out.println("HA HA HA");
+        }
+        System.out.println("Hello!");  // 编译报错：无法访问的语句 */
         
         /* int m = 10;
         int n = 3;
         while(m > n)  // 编译过程只检查语法，还未给变量分配空间，不知道布尔表达式结果
             System.out.println("死循环");
         System.out.println("Hello!");  // 编译通过。理由如上 */
-    }
-}
 
-class WhileStructure
-{
-    public static void main(String[] args)
-    {
-        
+        int w = 0;
+        while(w < 10)  // 执行顺序和for(int w=0;w<10;w++)相同
+        {
+            System.out.println(w++);  // 输出0~9
+        }
+        System.out.println(w);  // 10
+
+        System.out.println("--------------------------");
+        int h = 10;
+        while(h > 0)
+        {
+            System.out.println(--h);  // 输出9~0
+        }
+        System.out.println(h);  // 0
+
+        /************************* do...while结构 ***************************/
+        System.out.println("================= do...while结构 =================");
+        int d = 0;
+        do
+        {
+            System.out.println(d++);  // 输出0~9
+        }while(d < 10);
     }
 }
