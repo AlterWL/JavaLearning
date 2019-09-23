@@ -41,7 +41,7 @@
             }
  */
 
- public class ControlStateSwitch
+ public class StatementSwitch
  {
     public static void main(String[] args)
     {
