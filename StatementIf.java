@@ -81,7 +81,7 @@
         大于30分钟，还早
 */
 
-public class ControlStateIf
+public class StatementIf
 {
     public static void main(String[] args)
     {
