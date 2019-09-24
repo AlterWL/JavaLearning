@@ -1,6 +1,6 @@
 /*
 一个 java 源文件当中可以定义多个 class
-一个 java 源文件当中 pubilc 的 class 不是必须的
+一个 java 源文件当中 public 的 class 不是必须的
 一个 class 定义会生成一个 xxx.class 字节码文件
 一个 java 源文件中定义公开类的话，只能有一个，并且该类的名称必须和 java 源文件名称一致
 每一个 class 当中都可以编写 main 方法，都可以设定程序的入口，想执行 B.class 中的 main 方法>java B，想执行 X.class 中的 main 方法>java X
@@ -16,9 +16,9 @@ class A
 
 /* class B
 {
-	public static voidmain(String[] args)
+	public static void main(String[] args)
 	{
-		System.out.println("B's main metod invoke!")
+		System.out.println("B's main method invoke!")
 	}
 }  */
 
