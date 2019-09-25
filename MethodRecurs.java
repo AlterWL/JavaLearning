@@ -15,6 +15,27 @@ public class MethodRecurs
 {
     public static void main(String[] args)
     {
-        
+        int n = 10;
+        System.out.println(sum(n));
+        System.out.println(sum1(n));
+    }
+
+    // 使用递归计算1~n的整数和
+    public static int sum(int n)
+    {
+        if(n == 1)
+        return 1;
+        return n + sum(n-1);
+    }
+    
+    // 不使用递归计算1~n的整数和
+    public static int sum1(int n)
+    {
+        int sumValue=0;
+        for(int i=1;i<=n;i++)
+        {
+            sumValue += i;
+        }
+        return sumValue;
     }
 }
