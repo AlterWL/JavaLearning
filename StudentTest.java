@@ -13,7 +13,9 @@
 
     - java语言中，程序员不能直接操作堆内存(java中没有像C语言中的指针概念)。只能通过“引用”去访问堆内存中对象内部的实例变量。
  */
-public class ObjectOrientTest
+
+// 学生测试类
+public class StudentTest
 {
     public static void main(String[] args)
     {
