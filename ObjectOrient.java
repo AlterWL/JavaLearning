@@ -49,3 +49,10 @@
         
         - java语言中所有的class都属于引用数据类型。
  */
+
+public class ObjectOrient
+{
+    public static void main(String[] args) {
+        System.out.println("Java - 面向对象");
+    }
+}
