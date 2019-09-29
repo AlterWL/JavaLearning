@@ -35,14 +35,14 @@ public class Student  // 定义一个类，是一个学生对象的模板
     String name;  // 姓名
     int number;  // 学号
     boolean gender;  // 性别
-    private int age;  // 年龄，私有属性
+    private int age;  // 年龄，私有属性，不能从外部直接访问只能通过入口(setter和getter)
     String grade;  // 年级
 
     Computer computer;  // 学生的电脑
 
     // setter
     public void setAge(int a){
-        if(age >= 0 && age < 150)
+        if(age >= 0 && age < 150)  // 安全过滤，年龄不能为负数，也不能过大
             age = a;
         else
             System.out.println("年龄有误!!");
