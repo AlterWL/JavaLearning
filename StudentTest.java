@@ -27,13 +27,13 @@ public class StudentTest
         // 读取：引用.变量名;
         // 修改：引用.变量名 = 值;
         System.out.println("--------- 初始值 ---------");
-        System.out.println("姓名 ->"+s.name+"\n学号 ->"+s.number+"\n年龄 ->"+s.getAge()+"\n性别 ->"+(s.gender?"男":"女"));
+        System.out.println("姓名 -> "+s.name+"\n学号 -> "+s.number+"\n年龄 -> "+s.getAge()+"\n性别 -> "+(s.gender?"男":"女"));
         s.name = "阿羡";
         s.number = 2019123;
         s.setAge(20);
         s.gender = true;
         System.out.println("--------- 修改后 ---------");
-        System.out.println("姓名 ->"+s.name+"\n学号 ->"+s.number+"\n年龄 ->"+s.getAge()+"\n性别 ->"+(s.gender?"男":"女"));
+        System.out.println(s.name+"是"+(s.gender?"男":"女")+"生"+"，有"+s.getAge()+"岁了，学号是"+s.number);
         // System.out.println(Student.name);  // 编译错误: 无法从静态上下文中引用非静态 变量 name
 
         // s = null;
@@ -47,8 +47,12 @@ public class StudentTest
         laptop.style = "Office";
         laptop.color = "Red";
         laptop.price = 5499;
-
+        
         s.computer = laptop;
         System.out.println(s.name+"的电脑颜色是"+s.computer.color);
+        
+        System.out.println("--------- 构造方法的调用 ---------");
+        Student s1 = new Student("阿澄", 2019124, 20, true);
+        System.out.println(s1.name+"是"+(s1.gender?"男":"女")+"生"+"，有"+s1.getAge()+"岁了，学号是"+s1.number);
     }
 }

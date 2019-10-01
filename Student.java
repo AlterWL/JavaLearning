@@ -22,6 +22,38 @@
                 注：getter和setter方法没有static关键字修饰；
                     有static关键字修饰的方法调用：类名.方法名()；
                     没有static关键字修饰的方法调用：引用.方法名()。
+        
+    构造方法：
+        
+        - 构造方法又称为构造函数/构造器/Constructor
+
+        - 构造方法语法结构：
+            [修饰符列表] 构造方法名(形参列表){
+                构造方法体;
+            }
+            
+        - 普通方法的语法结构：
+            [修饰符列表] 返回值类型 方法名(形参列表){
+                方法体;
+            }
+        
+        - 构造方法的“返回值类型”不需要指定，并且也不能写void。一旦写上“返回值类型”，该方法就成为了普通方法。
+
+        - 构造方法名必须和类名一致。
+
+        - 作用和意义：通过构造方法的调用，可以创造对象。
+
+        - 调用方式：
+            * 普通方法调用方式：【有static修饰时】类名.方法名(实参列表)，【无static修饰时类名.方法名(实参列表)
+            * new 构造方法(实参列表)
+        
+        - 返回值：构造方法执行结束时自动返回值，返回值的类型是方法所在的类本身。
+    
+        - 缺省构造器：
+            当一个类中没有定义任何构造方法时，系统默认给该类提供一个无参数的构造方法，这个构造方法被称为缺省构造器。
+            当一个类显式地将构造方法定义出来时，那么系统将不再提供缺省构造器。
+            因为无参数构造方法十分常用，所以建议在开发中手动为当前类定义无参数构造方法【构造方法支持重载机制】。
+            
  */
 public class Student  // 定义一个类，是一个学生对象的模板
 {
@@ -37,8 +69,28 @@ public class Student  // 定义一个类，是一个学生对象的模板
     boolean gender;  // 性别
     private int age;  // 年龄，私有属性，不能从外部直接访问只能通过入口(setter和getter)
     String grade;  // 年级
-
     Computer computer;  // 学生的电脑
+
+    // 构造方法的定义
+    /**
+     * Student类的构造方法【无参数】
+     */
+    public Student(){
+        System.out.println("A new object has been created.");
+    }
+    /**
+     * Student类的构造方法，带参数
+     * @param sn - 姓名
+     * @param sno - 学号
+     * @param sa - 年龄
+     * @param sg - 性别
+     */
+    public Student(String sn, int sno,int sa, boolean sg){
+        name = sn;
+        number = sno;
+        setAge(sa);
+        gender = sg;
+    }
 
     // setter
     public void setAge(int a){
