@@ -10,7 +10,7 @@ class A
 {
 	public static void main(String[] args)
 	{
-		System.out.println("A's main metod invoke!");
+		System.out.println("A's main method invoke!");
 	}
 }
 
@@ -35,7 +35,7 @@ class X
 {
 	public static void main(String[] args)
 	{
-		System.out.println("X's main metod invoke!");
+		System.out.println("X's main method invoke!");
 	}
 }
 
@@ -43,7 +43,7 @@ class Y
 {
 	public static void main(String[] args)
 	{
-		System.out.println("Y's main metod invoke!");
+		System.out.println("Y's main method invoke!");
 	}
 }
 
@@ -51,6 +51,6 @@ public class ClassTest
 {
 	public static void main(String[] args)
 	{
-		System.out.println("ClassTest's main metod invoke!");
+		System.out.println("ClassTest's main method invoke!");
 	}
 }
