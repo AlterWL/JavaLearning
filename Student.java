@@ -122,6 +122,26 @@ public class Student {
         System.out.println(name+"在(da)学(ke)习(shui)..."); // this可以省略不写
     }
 
+    // 说出学生的基本信息
+    public void studentInfoGet() {
+        String info = this.name;
+        info += "是"+this.grade+"年级的";
+        info += (this.gender?"男":"女")+"生";
+        info += "，有"+this.getAge()+"岁了，";
+        info += "学号是"+this.number+"。";
+        
+        System.out.println(info);
+    }
+
+    public void computerInfoGet() {
+        String info = this.name;
+        if(this.computer != null)
+            info += "的电脑是"+this.computer.infoGet();
+        else
+            info += "没有电脑。";
+        System.out.println(info);
+    }
+
     // 该方法执行时是静态方法，通过类名调用，上下文中没有“当前对象”，自然不存在this
     // 所以在带有static的方法中不能“直接”访问实例变量和实例方法
     /* public static void doSome() {
