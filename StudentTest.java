@@ -21,38 +21,40 @@ public class StudentTest
     // 所以Student类中不需要编写主方法
     public static void main(String[] args)
     {
-        Student s = new Student();  // s是new所创建的对象的引用，即保存的是在堆内存中保存的对象的地址
+        Student xian = new Student();  // s是new所创建的对象的引用，即保存的是在堆内存中保存的对象的地址
         
         // 访问实例变量：
         // 读取：引用.变量名;
         // 修改：引用.变量名 = 值;
-        System.out.println("--------- 初始值 ---------");
-        System.out.println("姓名 -> "+s.name+"\n学号 -> "+s.number+"\n年龄 -> "+s.getAge()+"\n性别 -> "+(s.gender?"男":"女"));
-        s.name = "阿羡";
-        s.number = 2019123;
-        s.setAge(20);
-        s.gender = true;
-        System.out.println("--------- 修改后 ---------");
-        System.out.println(s.name+"是"+(s.gender?"男":"女")+"生"+"，有"+s.getAge()+"岁了，学号是"+s.number);
+        System.out.println("------------- 初始值 -------------");
+        System.out.println("姓名 -> "+xian.name+"\n学号 -> "+xian.number+"\n年龄 -> "+xian.getAge()+"\n性别 -> "+(xian.gender?"男":"女"));
+        xian.name = "阿羡";
+        xian.number = 2019123;
+        xian.setAge(20);
+        xian.gender = true;
+        System.out.println("------------- 修改后 -------------");
+        System.out.println(xian.name+"是"+(xian.gender?"男":"女")+"生"+"，有"+xian.getAge()+"岁了，学号是"+xian.number);
+        xian.study();
         // System.out.println(Student.name);  // 编译错误: 无法从静态上下文中引用非静态 变量 name
 
-        // s = null;
+        // xian = null;
         // 空引用访问实例相关的数据，编译通过因为符合语法， 运行时发生异常
-        // System.out.println(s.name);  // 运行时发生空指针异常：java.lang.NullPointerException
+        // System.out.println(xian.name);  // 运行时发生空指针异常：java.lang.NullPointerException
 
-        System.out.println("--------- 电脑对象 ---------");
-        // System.out.println(s.name+"的电脑颜色是"+s.computer.color);  // java.lang.NullPointerException
+        System.out.println("------------ 电脑对象 ------------");
+        // System.out.println(xian.name+"的电脑颜色是"+xian.computer.color);  // java.lang.NullPointerException
         Computer laptop = new Computer();
         laptop.brand = "ASUS";
         laptop.style = "Office";
         laptop.color = "Red";
         laptop.price = 5499;
         
-        s.computer = laptop;
-        System.out.println(s.name+"的电脑颜色是"+s.computer.color);
+        xian.computer = laptop;
+        System.out.println(xian.name+"的电脑颜色是"+xian.computer.color);
         
         System.out.println("--------- 构造方法的调用 ---------");
-        Student s1 = new Student("阿澄", 2019124, 20, true);
-        System.out.println(s1.name+"是"+(s1.gender?"男":"女")+"生"+"，有"+s1.getAge()+"岁了，学号是"+s1.number);
+        Student cheng = new Student("阿澄", 2019124, 20, true);
+        System.out.println(cheng.name+"是"+(cheng.gender?"男":"女")+"生"+"，有"+cheng.getAge()+"岁了，学号是"+cheng.number);
+        // Student.doSome();
     }
 }
