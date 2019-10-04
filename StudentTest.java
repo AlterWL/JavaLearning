@@ -27,34 +27,31 @@ public class StudentTest
         // 读取：引用.变量名;
         // 修改：引用.变量名 = 值;
         System.out.println("------------- 初始值 -------------");
-        System.out.println("姓名 -> "+xian.name+"\n学号 -> "+xian.number+"\n年龄 -> "+xian.getAge()+"\n性别 -> "+(xian.gender?"男":"女"));
+        xian.studentInfoGet(); // xian的初始信息
+        xian.computerInfoGet(); // xian的电脑信息
         xian.name = "阿羡";
         xian.number = 2019123;
         xian.setAge(20);
         xian.gender = true;
-        System.out.println("------------- 修改后 -------------");
-        System.out.println(xian.name+"是"+(xian.gender?"男":"女")+"生"+"，有"+xian.getAge()+"岁了，学号是"+xian.number);
-        xian.study();
         // System.out.println(Student.name);  // 编译错误: 无法从静态上下文中引用非静态 变量 name
-
+        
         // xian = null;
         // 空引用访问实例相关的数据，编译通过因为符合语法， 运行时发生异常
         // System.out.println(xian.name);  // 运行时发生空指针异常：java.lang.NullPointerException
-
-        System.out.println("------------ 电脑对象 ------------");
+        
         // System.out.println(xian.name+"的电脑颜色是"+xian.computer.color);  // java.lang.NullPointerException
-        Computer laptop = new Computer();
-        laptop.brand = "ASUS";
-        laptop.style = "Office";
-        laptop.color = "Red";
-        laptop.price = 5499;
+        System.out.println("------------- 修改后 -------------");
+        Computer laptop = new Computer("ASUS", "VivoBook", "红", 5499);  // 构造方法的调用
+        giveComputer(laptop, xian);
+        xian.studentInfoGet(); // xian的情况
+        xian.computerInfoGet(); // xian的电脑信息
+        xian.study(); // xian在学习
         
-        xian.computer = laptop;
-        System.out.println(xian.name+"的电脑颜色是"+xian.computer.color);
-        
-        System.out.println("--------- 构造方法的调用 ---------");
-        Student cheng = new Student("阿澄", 2019124, 20, true);
-        System.out.println(cheng.name+"是"+(cheng.gender?"男":"女")+"生"+"，有"+cheng.getAge()+"岁了，学号是"+cheng.number);
         // Student.doSome();
+    }
+
+    // 给学生一个电脑
+    public static void giveComputer(Computer c, Student s) {
+        s.computer = c;
     }
 }
