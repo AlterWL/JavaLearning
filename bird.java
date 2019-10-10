@@ -1,12 +1,12 @@
 /**
- * bird
+ * Bird
+ * 
+ * 子类；鸟类 - 继承自动物类
  */
-public class bird extends Animal {
+public class Bird extends Animal {
 
-    public static void main(String[] args) {
-        
-        public void move() {
-            System.out.println("鸟在空中飞...");
-        }
+    // 重写从父类中继承过来的方法
+    public void move() {
+        System.out.println("鸟在空中飞...");
     }
 }
