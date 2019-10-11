@@ -9,4 +9,8 @@ public class Bird extends Animal {
     public void move() {
         System.out.println("鸟在空中飞...");
     }
+
+    public void catchWorm() {
+        System.out.println("鸟在啄虫...");
+    }
 }
