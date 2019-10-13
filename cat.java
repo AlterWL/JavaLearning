@@ -15,4 +15,8 @@ public class Cat extends Animal{
     public void catchMouse() {
         System.out.println("猫在抓老鼠...");
     }
+
+    public void eat(String food) {
+        System.out.println("猫正在吃"+food+"...");
+    }
 }
