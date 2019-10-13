@@ -107,11 +107,11 @@ public class AnimalTest {
          }
 
          // 不能像这样编写，存在作用域问题，if条件下创建的对象是临时对象，出了作用域【大括号】就会被当做垃圾回收
-         if(a3 instanceof Bird) {
+         /* if(a3 instanceof Bird) {
             Bird bc = (Bird) a3;
          }else if(a3 instanceof Cat) {
             Cat bc = (Cat) a3;
-         }
+         } */
          // bc.move(); // 编译错误: 找不到符号。这是作用域问题引起的
       }
 }
