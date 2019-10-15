@@ -24,7 +24,7 @@
  */
 public class PetOwner {
 
-    public void feed(String food, Animal a) {
+    public void feed(String food, Pet a) {
         a.eat(food);
     }
 }
