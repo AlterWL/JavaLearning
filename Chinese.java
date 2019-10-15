@@ -27,7 +27,11 @@ public class Chinese {
     // 所有对象的国籍一样，这个特征属于类级别的特征
     // 静态变量在类加载的时候初始化，不需要创建对象内存就被开辟了，存储在方法区内存中
     // 这样不用每次创建实例时都为该属性开辟空间，更节省内存开销
-    static String country = "中国"; // 国籍
+    // static String country = "中国"; // 国籍
+
+    // 国籍
+    // 为防止国籍被修改，建议添加final修饰，定义国籍为常量
+    public static final String NATIONALITY = "中国";
 
     // 构造方法
     public Chinese() {
