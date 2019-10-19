@@ -1,3 +1,9 @@
+package obj.encap;
+/**
+ * Computer
+ * 
+ * 电脑类
+ */
 public class Computer  // 定义一个公开类，是一个学生对象的模板
 {
     String brand;  // 品牌

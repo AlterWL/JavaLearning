@@ -1,3 +1,4 @@
+package obj.encap;
 /* 
     封装；
         - 封装的好处：

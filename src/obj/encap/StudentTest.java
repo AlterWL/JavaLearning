@@ -1,3 +1,4 @@
+package obj.encap;
 /* 
     类的实例化：
 
