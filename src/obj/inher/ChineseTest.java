@@ -1,3 +1,4 @@
+package obj.inher;
 /**
  * ChineseTest
  * 
@@ -33,11 +34,11 @@ public class ChineseTest {
         wen.infoGet();
 
         // 所有静态的数据都可以采用类名方法访问，也可以采用引用的方式，但是建议采用类名方式访问
-        System.out.println(Chinese.country);
-        System.out.println(lan.country);
+        System.out.println(Chinese.NATIONALITY);
+        System.out.println(lan.NATIONALITY);
         // 即使引用为空，也不会出现空指针异常，因为访问静态数据不需要对象存在
         wen = null;
-        System.out.println(wen.country);
+        System.out.println(wen.NATIONALITY);
     }
 
     static {
