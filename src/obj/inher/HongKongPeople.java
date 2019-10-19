@@ -1,3 +1,4 @@
+package obj.inher;
 /**
  * HongKongPeople
  * 
@@ -21,7 +22,7 @@
  */
 public class HongKongPeople extends Chinese {
 
-    static  String nativePlace = Chinese.country+"香港"; // 籍贯
+    public static final String NATIVEPLACE = Chinese.NATIONALITY+"香港"; // 籍贯
 
     public HongKongPeople() {
         super();
@@ -29,7 +30,7 @@ public class HongKongPeople extends Chinese {
 
     public void infoGet() {
         String info = this.name;
-        info += "是"+HongKongPeople.nativePlace+"人 ，";
+        info += "是"+HongKongPeople.NATIVEPLACE+"人 ，";
         info += "身份证号是"+this.id+"。";
         System.out.println(info);
     }
