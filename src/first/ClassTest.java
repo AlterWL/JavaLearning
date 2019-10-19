@@ -1,4 +1,4 @@
-package fisrt;
+package first;
 /*
 一个 java 源文件当中可以定义多个 class
 一个 java 源文件当中 public 的 class 不是必须的
