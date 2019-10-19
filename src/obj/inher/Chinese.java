@@ -1,3 +1,4 @@
+package obj.inher;
 /**
  * Chinese
  * 
@@ -21,8 +22,8 @@ public class Chinese {
         System.out.println("Chinese实例代码块 -- > 1");
     }
         
-    String id; // 身份证号
-    String name; // 姓名
+    protected String id; // 身份证号
+    protected String name; // 姓名
     
     // 所有对象的国籍一样，这个特征属于类级别的特征
     // 静态变量在类加载的时候初始化，不需要创建对象内存就被开辟了，存储在方法区内存中
@@ -44,7 +45,7 @@ public class Chinese {
     
     public void infoGet() {
         String info = this.name;
-        info += "是"+Chinese.country+"人，";
+        info += "是"+Chinese.NATIONALITY+"人，";
         info += "身份证号是"+this.id+"。";
         System.out.println(info);
     }
