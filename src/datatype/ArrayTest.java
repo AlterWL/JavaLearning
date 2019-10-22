@@ -1,15 +1,15 @@
 package datatype;
 
+import java.util.Arrays;
+
 public class ArrayTest {
     public static void main(String[] args) {
         
+        System.out.println("\n-------------------- 数组定义 --------------------");
         // int类型数组，默认赋值为0
         int[] a = new int[5];
         System.out.print("int类型数组默认赋值：");
-        for(int i=0;i<5;i++) {
-            System.out.print(a[i]+", ");
-        }
-        System.out.println();
+        System.out.println(Arrays.toString(a));
 
         // 分配空间同时赋值
         int[] b = new int[]{1,2,3,4,5}; // 写法1：分配空间同时赋值
@@ -19,43 +19,45 @@ public class ArrayTest {
         // 所以如果指定了数组内容，就不能同时设置数组长度，就算长度一致也不行
         // int[] d = new int[5]{111,222,333,444,555}; // 编译错误: 同时使用维表达式和初始化创建数组是非法的
 
-        System.out.println("-------------------- 数组a1 --------------------");
+        System.out.println("\n-------------------- 数组赋值 --------------------");
         int[] a1 = new int[5];
-        System.out.println("赋值数组结果：");
         for(int i=0;i<5;i++) {
             a1[i] = (int) (Math.random()*100); // 赋值0~100之间的随机整数
-            System.out.print(a1[i]+", "); // 赋值过后显示数组内容
+            // System.out.print(a1[i]+", "); // 赋值过后显示数组内容
         }
-        System.out.println();
+        System.out.println("赋值数组结果："+Arrays.toString(a1));
         rev(a1); // 反转
-        System.out.println("数组反转结果：");
-        for(int i=0;i<5;i++) {
-            System.out.print(a1[i]+", "); // 赋值过后显示数组内容
-        }
-        System.out.println();
-        
+        System.out.println("数组反转结果："+Arrays.toString(a1));
         System.out.println("数组最大值为："+max(a1)); // 得到数组最大值
         
-        System.out.println("-------------------- 数组合并 --------------------");
+        System.out.println("\n-------------------- 数组合并 --------------------");
         int[] sub1 = new int[(int)(5+Math.random()*5)]; // 长度为5~10
         int[] sub2 = new int[(int)(5+Math.random()*5)]; // 长度为5~10
-        System.out.print("子数组1：");
         for(int i=0;i<sub1.length;i++) {
             sub1[i] = (int) (Math.random()*100); // 赋值0~100之间的随机整数
-            System.out.print(sub1[i]+", "); // 赋值过后显示数组内容
+            // System.out.print(sub1[i]+", "); // 赋值过后显示数组内容
         }
-        System.out.println();
-        System.out.print("子数组2：");
+        System.out.println("子数组1："+Arrays.toString(sub1));
         for(int i=0;i<sub2.length;i++) {
             sub2[i] = (int) (Math.random()*100); // 赋值0~100之间的随机整数
-            System.out.print(sub2[i]+", "); // 赋值过后显示数组内容
+            // System.out.print(sub2[i]+", "); // 赋值过后显示数组内容
         }
-        System.out.println();
+        System.out.println("子数组2："+Arrays.toString(sub2));
         int[] merge_arr = concat(sub1, sub2);
-        System.out.print("合并数组：");
-        for(int i=0;i<merge_arr.length;i++) {
-            System.out.print(merge_arr[i] + ", ");
+        System.out.println("合并数组："+Arrays.toString(merge_arr));
+        
+        System.out.println("\n-------------------- 二维数组 --------------------");
+        int[][] ar2 = new int[5][5];
+        System.out.println("生成的二维数组为；");
+        for(int i=0;i<5;i++) {
+            for(int j=0;j<5;j++) {
+                ar2[i][j] = (int) (Math.random()*100);
+                System.out.print(ar2[i][j]+"\t");
+            }
+            System.out.println();
         }
+        System.out.println("该二维数组中的最大值是："+max(ar2));
+
     }
     
     /**
@@ -86,6 +88,23 @@ public class ArrayTest {
         for(int val : arr) {
             if(max < val) {
                 max = val;
+            }
+        }
+        return max;
+    }
+
+    /**
+     * 
+     * @param ar2 二维数组
+     * @return max 二维数组中的最大值
+     */
+    public static int max(int[][] ar2) {
+        int max = ar2[0][0];
+        for(int i=0;i<5;i++) {
+            for(int j=0;j<5;j++) {
+                if(max < ar2[i][j]) {
+                    max = ar2[i][j];
+                }
             }
         }
         return max;
