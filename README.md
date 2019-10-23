@@ -34,7 +34,7 @@
   
    1）编译：  
   `javac -encoding utf8 -d .` + `代码(相对)路径`。  
-  如：`javac -encoding utf8 -d .\src\datatype\*.java`  
+  如：`javac -encoding utf8 -d . ./src/datatype/*.java`  
 
    2）运行：
    `java ` + `包名` + `类名`。  
