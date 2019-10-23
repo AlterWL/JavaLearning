@@ -53,7 +53,7 @@ public class Test
     public static void main(String[] args)
     {
         System.out.println("----------------方法调用----------------");
-        MethodTest.method1();  // 调用方法
+        Test.method1();  // 调用方法
         method1();  // 对于同一类体中的方法，其修饰符列表中有static关键字的，调用时“类名.”可省略
         
         A.doOthers();  // 调用其他类中的方法
