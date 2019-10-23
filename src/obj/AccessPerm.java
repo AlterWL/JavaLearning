@@ -1,4 +1,4 @@
-package src.obj;
+package obj;
 
 /**
  * AccessPerm
@@ -17,5 +17,7 @@ package src.obj;
  */
 public class AccessPerm {
 
-    System.out.println("Access Control Permission...");
+    public static void main(String[] args) {
+        System.out.println("Access Control Permission...");
+    }
 }

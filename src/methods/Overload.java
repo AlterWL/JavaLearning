@@ -1,4 +1,4 @@
-package variables;
+package methods;
 /* 
     方法重载【overload】机制:
 
