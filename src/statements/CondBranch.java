@@ -67,6 +67,8 @@ package statements;
         - if语句分支结构中只有一条java语句，可以省略大括号。不推荐这样用，但要能看懂。
  */
 
+import java.util.Scanner;
+
 /* 
     根据剩余时间【分钟】，决定去上课的速度
     负数时间，已迟到
@@ -82,48 +84,59 @@ package statements;
         大于30分钟，还早
 */
 
-public class CondBranch
-{
-    public static void main(String[] args)
-    {
+public class CondBranch {
+    public static void main(String[] args) {
 
         // 以下为从键盘接收输入的代码语句
         // 第一步：创建键盘扫描对象
-        java.util.Scanner s = new java.util.Scanner(System.in);
+        Scanner s = new Scanner(System.in);
         // 第二步；调用Scanner对象的next()方法等待接收用户键盘输入
-        // String classRoom = s.next();  // 接收的是文本【以字符串形式接收】
+        // String classRoom = s.next(); // 接收的是文本【以字符串形式接收】
+        int classRoom = 0;
         System.out.print("教室在哪栋教学楼（5/8）？");
-        int classRoom = s.nextInt();  // 接收数字【以int形式接收】
+        while (true) {
+            if (s.hasNextInt()) {
+                classRoom = s.nextInt(); // 接收数字【以int形式接收】
+            }
+            if (classRoom == 5 || classRoom == 8) {
+                break;
+            } else {
+                System.out.print("没睡醒啊，好好说话！(整数5还是8）");
+            }
+        }
         
         int minutesLeft = -1;
-        String attendClass = "已迟到，别挣扎了！";  // 默认对应attendClass为负数的情况
-        if(classRoom == 8)
-        {
-            System.out.print("离上课还有多少分钟？");  // 输出提示语句
-            minutesLeft = s.nextInt();  // 接收数字【以int形式接收】
-            if(minutesLeft >= 30){
+        String attendClass = "已迟到，别挣扎了！"; // 默认对应attendClass为负数的情况
+        System.out.print("离上课还有多少分钟？"); // 输出提示语句
+        if (s.hasNextInt()) {
+            minutesLeft = s.nextInt(); // 接收数字【以int形式接收】
+        } else {
+            System.out.println("别逗我，快说大概还有多久(整数)？（分钟）");
+        }
+        if (classRoom == 8) {
+            if (minutesLeft >= 144) {
+                attendClass = "不好意思，打扰了！";
+            } else if (minutesLeft >= 30) {
                 attendClass = "还早呢，先预习预习！";
-            }else if(minutesLeft >= 20){
+            } else if (minutesLeft >= 20) {
                 attendClass = "时间还够，慢慢走去上课。";
-            }else if(minutesLeft >= 10){
+            } else if (minutesLeft >= 10) {
                 attendClass = "时间有点紧，赶快跑起来！";
-            }else if(minutesLeft >= 0){
+            } else if (minutesLeft >= 0) {
                 attendClass = "啊啊啊冲鸭！";
             }
-        }else if(classRoom == 5){
-            System.out.print("离上课还有多少分钟？");  // 输出提示语句
-            minutesLeft = s.nextInt();  // 接收数字【以int形式接收】
-            if(minutesLeft >= 25){
+        } else { // classRoom = 5
+            if (minutesLeft >= 144) {
+                attendClass = "不好意思，打扰了！";
+            } else if (minutesLeft >= 25) {
                 attendClass = "还早呢，先预习预习！";
-            }else if(minutesLeft >= 15){
+            } else if (minutesLeft >= 15) {
                 attendClass = "时间还够，慢慢走去上课。";
-            }else if(minutesLeft >= 8){
+            } else if (minutesLeft >= 8) {
                 attendClass = "时间有点紧，赶快跑起来！";
-            }else if(minutesLeft >= 0){
+            } else if (minutesLeft >= 0) {
                 attendClass = "啊啊啊冲鸭！";
             }
-        }else{
-            attendClass = "您没睡醒吧！";
         }
         System.out.println(attendClass);
     }
