@@ -42,7 +42,9 @@ package statements;
             }
  */
 
- public class MultiBranch
+import java.util.Scanner;
+
+public class MultiBranch
  {
     public static void main(String[] args)
     {
@@ -68,41 +70,47 @@ package statements;
             ...
             7 -> 星期天
         */
-        java.util.Scanner s = new java.util.Scanner(System.in);
-        System.out.print("请输入数字（1~7）；");
-        int num = s.nextInt();
+        Scanner s = new Scanner(System.in);
+        int num = 0; // 数字
         String dayOfWeek = "";
-        switch(num){  // 识别int类型数据
-            case 1:
-                dayOfWeek = "星期一";
-                break;
-            case 2:
-                dayOfWeek = "星期二";
-                break;
-            case 3:
-                dayOfWeek = "星期三";
-                break;
-            case 4:
-                dayOfWeek = "星期四";
-                break;
-            case 5:
-                dayOfWeek = "星期五";
-                break;
-            case 6:
-                dayOfWeek = "星期六";
-                break;
-            case 7:
-                dayOfWeek = "星期天";
-                break;
-            default:
-                dayOfWeek = "错误";
-                break;
+        System.out.print("请输入数字（1~7）；");
+        if(s.hasNextInt()) { // 判断输入的是否为整数
+            num = s.nextInt();
+            dayOfWeek = "";
+            switch(num) {  // 识别int类型数据
+                case 1:
+                    dayOfWeek = "星期一";
+                    break;
+                case 2:
+                    dayOfWeek = "星期二";
+                    break;
+                case 3:
+                    dayOfWeek = "星期三";
+                    break;
+                case 4:
+                    dayOfWeek = "星期四";
+                    break;
+                case 5:
+                    dayOfWeek = "星期五";
+                    break;
+                case 6:
+                    dayOfWeek = "星期六";
+                    break;
+                case 7:
+                    dayOfWeek = "星期天";
+                    break;
+                default:
+                    dayOfWeek = "错误";
+                    break;
+            }
+        }else { // 输入不是整数
+            System.out.println("输入的不是整数！");
         }
         // System.out.println(dayOfWeek);
         
         // case穿透，合并，因为存在穿透，所以可以合并
         String dayOfWorkOrRest = "";
-        switch(dayOfWeek){  // 识别Sting类型数据
+        switch(dayOfWeek){  // 识别String类型数据
             case "星期一": case "星期二": case "星期三": case "星期四": case "星期五":
                 dayOfWorkOrRest = "工作日";
                 break;
