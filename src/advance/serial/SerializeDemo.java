@@ -15,9 +15,12 @@ public class SerializeDemo {
         e.address = "Phokka Kuan, Ambehta Peer";
         e.SSN = 11122333;
         e.number = 101;
+        e.mailCheck();
+        System.out.println("SSN: " + e.SSN);
+        System.out.println("Number: " + e.number);
         try {
-            FileOutputStream fileOut = new FileOutputStream("employee.ser"); // 创建了一个名为 tmp/employee.ser 文件，由此创建一个文件输出流对象
-            ObjectOutputStream out = new ObjectOutputStream(fileOut); // 使用创建的文件对象创建一个对象输出流，用于序列化之前的 e 对象到文件 employee.ser中去
+            FileOutputStream fileOut = new FileOutputStream("employee.ser"); // 创建了一个名为tmp/employee.ser文件，由此创建一个文件输出流对象
+            ObjectOutputStream out = new ObjectOutputStream(fileOut); // 使用创建的文件对象创建一个对象输出流，用于序列化之前的e对象到文件employee.ser中去
             out.writeObject(e); // 序列化 e 到文件 employee.ser 中去
             out.close(); // 关闭对象输出流
             fileOut.close(); // 关闭文件输出流
