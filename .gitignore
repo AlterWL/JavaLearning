@@ -27,3 +27,6 @@ hs_err_pid*
 
 # 序列化文件
 *.ser
+
+# IntelliJ-IDEA
+.idea/
