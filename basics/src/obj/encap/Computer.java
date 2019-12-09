@@ -1,7 +1,8 @@
 package obj.encap;
+
 /**
  * Computer
- * 
+ * <p>
  * 电脑类
  */
 public class Computer  // 定义一个公开类，是一个学生对象的模板
@@ -31,20 +32,20 @@ public class Computer  // 定义一个公开类，是一个学生对象的模板
 
     // 给定价格
     public void setPrice(int price) {
-        if(price > 0)
+        if (price > 0)
             this.price = price;
-        else if(price == 0)
+        else if (price == 0)
             System.out.println("天下没有免费的午餐！");
         else  // price < 0
             System.out.println("傻子才倒贴钱！");
     }
 
     public String infoGet() {
-        String info="";
-        info += this.brand+"牌的";
-        info += this.style+"系列";
-        info += this.color+"款的，";
-        info += this.price+"块买的。";
+        String info = "";
+        info += this.brand + "牌的";
+        info += this.style + "系列";
+        info += this.color + "款的，";
+        info += this.price + "块买的。";
         return info;
     }
 }

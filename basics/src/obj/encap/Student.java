@@ -1,5 +1,6 @@
 package obj.encap;
-/* 
+
+/*
     封装；
         - 封装的好处：
             * 封装复杂的处理过程，对外部提供简单的操作接口，对使用者不需要关心内部实现原理就可以直接使用【如照相机、电视机】，封装之后才形成了真正的独立体，即“对象”；
@@ -71,9 +72,10 @@ public class Student {
     Computer computer; // 学生的电脑
 
     // 构造方法
+
     /**
      * Student类的构造方法，带参数
-     * 
+     *
      * @param name   - 姓名
      * @param num    - 学号
      * @param age    - 年龄
@@ -103,14 +105,14 @@ public class Student {
         // new Student("阿汪", 2019120, 20, true); // 该方式创建了一个新对象
         this("阿汪", 2019120, 20, true);  // 该方式没有创建了一个新的对象，
     }
-    
+
     public void setAge(int age) {
         if (this.age >= 0 && age < 150) // 安全过滤，年龄不能为负数，也不能过大
             this.age = age;
         else
             System.out.println("年龄有误!!");
     }
-    
+
     public int getAge() {
         return age;
     }
@@ -120,24 +122,24 @@ public class Student {
     // 学习动作依赖于学生，而每个学生的学习方式不同
     public void study() {
         // System.out.println(this.name+"在学习...");
-        System.out.println(name+"在(da)学(ke)习(shui)..."); // this可以省略不写
+        System.out.println(name + "在(da)学(ke)习(shui)..."); // this可以省略不写
     }
 
     // 说出学生的基本信息
     public void studentInfoGet() {
         String info = this.name;
-        info += "是"+this.grade+"年级的";
-        info += (this.gender?"男":"女")+"生";
-        info += "，有"+this.getAge()+"岁了，";
-        info += "学号是"+this.number+"。";
-        
+        info += "是" + this.grade + "年级的";
+        info += (this.gender ? "男" : "女") + "生";
+        info += "，有" + this.getAge() + "岁了，";
+        info += "学号是" + this.number + "。";
+
         System.out.println(info);
     }
 
     public void computerInfoGet() {
         String info = this.name;
-        if(this.computer != null)
-            info += "的电脑是"+this.computer.infoGet();
+        if (this.computer != null)
+            info += "的电脑是" + this.computer.infoGet();
         else
             info += "没有电脑。";
         System.out.println(info);
