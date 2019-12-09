@@ -16,43 +16,42 @@ package obj.encap;
  */
 
 // 学生测试类
-public class StudentTest
-{
+public class StudentTest {
     // 每一个类中都可以编写主方法，但一般情况下，一个系统只有一个入口，所以主方法一般只写一个
     // 所以Student类中不需要编写主方法
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Student xian = new Student();  // s是new所创建的对象的引用，即保存的是在堆内存中保存的对象的地址
-        
+
         // 访问实例变量：
         // 读取：引用.变量名;
         // 修改：引用.变量名 = 值;
         System.out.println("------------- 初始值 -------------");
         xian.studentInfoGet(); // xian的初始信息
         xian.computerInfoGet(); // xian的电脑信息
+
+        System.out.println("-------- ...  修改中 ... ---------");
         xian.name = "阿羡";
         xian.number = 2019123;
         xian.setAge(20);
         xian.gender = true;
         // System.out.println(Student.name);  // 编译错误: 无法从静态上下文中引用非静态 变量 name
-        
         // xian = null;
         // 空引用访问实例相关的数据，编译通过因为符合语法， 运行时发生异常
         // System.out.println(xian.name);  // 运行时发生空指针异常：java.lang.NullPointerException
-        
         // System.out.println(xian.name+"的电脑颜色是"+xian.computer.color);  // java.lang.NullPointerException
-        System.out.println("------------- 修改后 -------------");
         Computer laptop = new Computer("ASUS", "VivoBook", "红", 5499);  // 构造方法的调用
         giveComputer(laptop, xian);
+
+        System.out.println("------------- 修改后 -------------");
         xian.studentInfoGet(); // xian的情况
         xian.computerInfoGet(); // xian的电脑信息
         xian.study(); // xian在学习
-        
+
         // Student.doSome();
     }
 
     // 给学生一个电脑
-    public static void giveComputer(Computer c, Student s) {
+    private static void giveComputer(Computer c, Student s) {
         s.computer = c;
     }
 }
