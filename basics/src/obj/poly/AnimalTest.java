@@ -1,7 +1,7 @@
 package obj.poly;
 /**
  * AnimalTest
- * 
+ *
  *  关于java中的多态语法机制：
  *      - Animal、Bird、Cat三个类之间的关系：
  *          * Bird继承自Animal，
@@ -9,9 +9,9 @@ package obj.poly;
  *          * Bird和Cat之间没有任何继承关系；
  *      - 关于多态种涉及到的概念：
  *          * 向上转型(upcasting)：
-*              子类型 -> 父类型 ，又称为自动类型转换
+ *              子类型 -> 父类型 ，又称为自动类型转换
  *          * 向下转型(downcasting)：
- *             父类型 -> 子类型 ， 又称为强制类型转换【需要加强制类型转换符】 
+ *              父类型 -> 子类型 ， 又称为强制类型转换【需要加强制类型转换符】
  *          * 无论是向上还是向下类型转换，两种类型之间都必须要有继承关系，不然编译无法通过。
  */
 public class AnimalTest {
@@ -48,7 +48,7 @@ public class AnimalTest {
          * 这种机制称为一种多态语法机制。
          */
          a2.move();
-        
+
         /**
          * 以下程序不能调用，编译错误：找不到符号。
          * 原因；在编译阶段a2的类型是Animal，从Animal.class字节码文件中查找不到catchMouse方法
@@ -70,7 +70,7 @@ public class AnimalTest {
          *  - 编译通过：向下转型；
          *  - 运行异常原因：JVM中引用指向的真实对象是Bird对象，而Bird对象无法转换成没有继承关系的Cat对象。
          *  此种类型称为“类型转换异常”，这总是在向下转型时发生。
-         * 
+         *
          *  结论：类型转换异常只在强制类型转换的时候可能发生，所以向下转型存在隐患，
          *        编译通过，但是运行出错，向上转型只有要编译通过，运行一定通过。
          */
@@ -80,14 +80,14 @@ public class AnimalTest {
         /**
          * 避免ClassCastingException的方法；
          *     instanceof
-         * 
+         *
          * instanceof运算符的使用：
          *     - 语法格式：(引用 instanceof 数据类型)；
          *     - 以上语法执行结果为布尔类型(true/false)，
          *        如；(a instanceof Animal)，
          *        true -> a 所指向的对象类型为Animal，
          *        false -> a 所指向的对象类型不是Animal，；
-         * 
+         *
          * java规范中要求，在进行强制类型转换之前，建议采用instanceof运算符进行判断，避免ClassCastingException发生。
          */
          Animal a3 = new Bird();
