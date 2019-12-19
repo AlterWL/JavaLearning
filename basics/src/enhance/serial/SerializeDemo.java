@@ -1,4 +1,4 @@
-package advance.serial;
+package enhance.serial;
 
 /**
  * SerializeDemo
