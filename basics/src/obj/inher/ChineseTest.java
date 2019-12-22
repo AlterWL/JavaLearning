@@ -29,9 +29,15 @@ public class ChineseTest {
     public static void main(String[] args) {
         Chinese lan = new Chinese("20192345", "蓝湛");
         lan.infoGet();
-
         Chinese wen = new Chinese("20191766", "温宁");
         wen.infoGet();
+
+        Chinese kai = new Chinese();
+        Chinese pu = new Chinese();
+        kai.name = "阿楷";
+        pu.name = "蒲松";
+        kai.infoGet();
+        pu.infoGet();
 
         // 所有静态的数据都可以采用类名方法访问，也可以采用引用的方式，但是建议采用类名方式访问
         System.out.println(Chinese.NATIONALITY);
