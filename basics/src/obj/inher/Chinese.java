@@ -16,15 +16,16 @@ package obj.inher;
  *  - 实例代码块也是java语言为程序员准备的一个特殊时机，称为“对象初始化时机”。
  */
 public class Chinese {
-    
+
     // 实例代码块1
-    {
-        System.out.println("Chinese实例代码块 -- > 1");
-    }
-        
+//    {
+//        System.out.println("Chinese实例代码块 -- > 1");
+//    }
+
     protected String id; // 身份证号
     protected String name; // 姓名
-    
+    private static int idCounter = 0; // 每创建一个新对象时，id计数自动加一
+
     // 所有对象的国籍一样，这个特征属于类级别的特征
     // 静态变量在类加载的时候初始化，不需要创建对象内存就被开辟了，存储在方法区内存中
     // 这样不用每次创建实例时都为该属性开辟空间，更节省内存开销
@@ -36,6 +37,7 @@ public class Chinese {
 
     // 构造方法
     public Chinese() {
+        this.id = String.format("2019%04d",this.idCounter++);
     }
     
     public Chinese(String id, String name) {
@@ -51,7 +53,7 @@ public class Chinese {
     }
 
     // 实例代码块2
-    {
-        System.out.println("Chinese实例代码块 -- > 2");
-    }
+//    {
+//        System.out.println("Chinese实例代码块 -- > 2");
+//    }
 }
