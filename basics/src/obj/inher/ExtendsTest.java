@@ -38,6 +38,9 @@ public class ExtendsTest {
         String s = et.toString(); // 这里编译通过了，这说明ExtendsTest从Object中继承了toString方法
         System.out.println(s);
 
+        HongKongPeople xiao = new HongKongPeople();
+        xiao.infoGet();
+
         HongKongPeople zeng = new HongKongPeople();
         zeng.name = "小曾";
         zeng.id = "1102934x";
