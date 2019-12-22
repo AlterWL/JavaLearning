@@ -44,12 +44,16 @@ public class Chinese {
         this.id = id;
         this.name = name;
     }
-    
-    public void infoGet() {
+
+    protected String info(String nativeP){
         String info = this.name;
-        info += "是"+Chinese.NATIONALITY+"人，";
+        info += "是"+nativeP+"人，";
         info += "身份证号是"+this.id+"。";
-        System.out.println(info);
+        return info;
+    }
+
+    public void infoGet() {
+        System.out.println(info(Chinese.NATIONALITY));
     }
 
     // 实例代码块2
