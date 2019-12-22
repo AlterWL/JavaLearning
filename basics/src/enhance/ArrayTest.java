@@ -2,6 +2,15 @@ package enhance;
 
 import java.util.Arrays;
 
+/**
+ * ArrayTest
+ * 1. java.util.Arrays是一个与数组相关的工具类，提供了大量的静态方法，用来实现数组常见的操作；
+ * - public static void toString(数组); // 将参数数组变成字符串，默认格式为：[元素1，元素2，... ]；
+ * - public static void sort(数组); // 按照默认升序(从小到大)，对数组元素进行排序。
+ * - - 备注：对于数值，sort默认按照升序，从小到大；
+ * - - - -  对于字符串，sort按照字符升序；
+ * - - - -  对于其他类，要求类中有comparable或者comparator的接口支持。
+ */
 public class ArrayTest {
     public static void main(String[] args) {
         
